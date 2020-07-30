@@ -3,6 +3,7 @@ package br.com.githubchallenge.feature.main
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import android.view.View
 import br.com.githubchallenge.feature.main.service.model.Item
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_repo.view.*
 
 class RepositoryViewHolder(itemView: View) : ViewHolder(itemView) {
@@ -13,6 +14,6 @@ class RepositoryViewHolder(itemView: View) : ViewHolder(itemView) {
         itemView.fork_count.text = repo?.forksCount?.toString()
         itemView.stars_count.text = repo?.stargazersCount?.toString()
         itemView.owner_name.text = repo?.owner?.login
-//        Picasso.with(itemView.context).load(repo?.)
+        Picasso.with(itemView.context).load(repo?.owner?.avatarUrl).into(itemView.user_avatar)
     }
 }
