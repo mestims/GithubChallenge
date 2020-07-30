@@ -1,9 +1,11 @@
 package br.com.githubchallenge
 
+import android.content.ClipData
 import br.com.githubchallenge.feature.main.MainContract
 import br.com.githubchallenge.feature.main.MainPresenter
 import br.com.githubchallenge.feature.main.MainRepository
 import io.mockk.Ordering
+import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Test
