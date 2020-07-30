@@ -1,15 +1,14 @@
 package br.com.githubchallenge.paging
 
-import android.arch.paging.PageKeyedDataSource
+import androidx.paging.PageKeyedDataSource
 import br.com.githubchallenge.service.GithubApi
 import br.com.githubchallenge.service.model.GitRepositories
 import br.com.githubchallenge.service.model.Item
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import javax.inject.Inject
 
-class GithubDataSource @Inject constructor(
+class GithubDataSource constructor(
     private val service: GithubApi
 ) : PageKeyedDataSource<Int, Item>() {
 

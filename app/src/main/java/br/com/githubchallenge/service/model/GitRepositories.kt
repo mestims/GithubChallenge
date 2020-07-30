@@ -1,6 +1,6 @@
 package br.com.githubchallenge.service.model
 
-import android.arch.persistence.room.Embedded
+import androidx.room.Embedded
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize

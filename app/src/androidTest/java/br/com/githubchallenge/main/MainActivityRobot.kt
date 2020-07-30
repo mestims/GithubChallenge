@@ -1,15 +1,15 @@
 package br.com.githubchallenge.main
 
-import android.arch.paging.PagedListAdapter
-import android.support.test.InstrumentationRegistry
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.GeneralLocation
-import android.support.test.espresso.action.GeneralSwipeAction
-import android.support.test.espresso.action.Press
-import android.support.test.espresso.action.Swipe
-import android.support.test.espresso.contrib.RecyclerViewActions
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.rule.ActivityTestRule
+import androidx.paging.PagedListAdapter
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.GeneralLocation
+import androidx.test.espresso.action.GeneralSwipeAction
+import androidx.test.espresso.action.Press
+import androidx.test.espresso.action.Swipe
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.rule.ActivityTestRule
 import br.com.githubchallenge.R
 import br.com.githubchallenge.crazymock.MockServer
 import br.com.githubchallenge.feature.main.MainActivity
@@ -26,7 +26,7 @@ class MainActivityRobot(val rule: ActivityTestRule<MainActivity>) {
 
     private val server = MockServer.mockWebServer
     fun prepareServer() {
-        val context = InstrumentationRegistry.getContext()
+        val context = InstrumentationRegistry.getInstrumentation().context
 
         val page1 =
             context.resources.assets.open("page1.json").bufferedReader(Charset.defaultCharset()).use { it.readText() }

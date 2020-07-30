@@ -1,30 +1,22 @@
 package br.com.githubchallenge
 
-import android.app.Activity
 import android.app.Application
-import br.com.githubchallenge.di.component.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import javax.inject.Inject
+import br.com.githubchallenge.di.NetworkModule
+import br.com.githubchallenge.feature.main.MainModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-open class App : Application(), HasActivityInjector {
-
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+open class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        DaggerAppComponent
-            .builder()
-            .application(this)
-            .baseUrl("https://api.github.com/")
-            .build()
-            .inject(this)
-
-
+        startKoin {
+            androidContext(this@App)
+            modules(listOf(NetworkModule.instance, MainModule.instance))
+        }
+        setup()
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
+    open fun setup() {}
 }

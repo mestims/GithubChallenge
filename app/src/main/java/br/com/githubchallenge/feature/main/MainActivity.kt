@@ -1,43 +1,41 @@
 package br.com.githubchallenge.feature.main
 
-import android.arch.lifecycle.Observer
+import androidx.paging.PagedList
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.githubchallenge.R
-import dagger.android.support.DaggerAppCompatActivity
+import br.com.githubchallenge.service.model.Item
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
-class MainActivity : DaggerAppCompatActivity() {
-
-    @Inject
-    lateinit var viewModel: MainViewModel
+class MainActivity : AppCompatActivity(), MainContract.View {
 
     private val adapter = MainAdapter()
+    private val presenter: MainContract.Presenter by inject { parametersOf(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupViews()
-        getList()
+        presenter.getList()
     }
 
     private fun setupViews() {
         repository_list.apply {
             adapter = this@MainActivity.adapter
-            layoutManager = LinearLayoutManager(context)
+            layoutManager =
+                androidx.recyclerview.widget.LinearLayoutManager(context)
         }
-
-        swipe_container.setOnRefreshListener {
-            getList()
-        }
+        swipe_container.setOnRefreshListener { presenter.getList() }
     }
 
-    private fun getList() {
-        viewModel.getRepositoriesList()?.observe(this, Observer {
-            swipe_container.isRefreshing = false
-            adapter.submitList(it)
-        })
+    override fun showList(pagedList: PagedList<Item>) {
+        adapter.submitList(pagedList)
     }
 
+    override fun hideLoading() {
+        swipe_container.isRefreshing = false
+    }
 }

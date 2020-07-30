@@ -1,12 +1,11 @@
 package br.com.githubchallenge.feature.main
 
-import android.arch.paging.PagedList
+import androidx.paging.PagedList
 import br.com.githubchallenge.paging.GithubDataSource
 import br.com.githubchallenge.paging.MainThreadExecutor
 import br.com.githubchallenge.service.model.Item
-import javax.inject.Inject
 
-class MainRepository @Inject constructor(
+class MainRepository constructor(
     private val dataSource: GithubDataSource,
     private val executor: MainThreadExecutor
 ) {
