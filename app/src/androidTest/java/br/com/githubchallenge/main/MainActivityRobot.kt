@@ -14,7 +14,7 @@ import br.com.githubchallenge.R
 import br.com.githubchallenge.crazymock.MockServer
 import br.com.githubchallenge.feature.main.MainActivity
 import br.com.githubchallenge.feature.main.RepositoryViewHolder
-import br.com.githubchallenge.service.model.Item
+import br.com.githubchallenge.feature.main.service.model.Item
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import kotlinx.android.synthetic.main.activity_main.*

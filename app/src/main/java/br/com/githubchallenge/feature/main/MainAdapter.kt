@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.DiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import br.com.githubchallenge.R
-import br.com.githubchallenge.service.model.Item
+import br.com.githubchallenge.feature.main.service.model.Item
 
 class MainAdapter :
     PagedListAdapter<Item, RepositoryViewHolder>(RepositoryDiffCallback()) {

@@ -2,8 +2,7 @@ package br.com.githubchallenge.feature.main
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import android.view.View
-import br.com.githubchallenge.service.model.Item
-import com.squareup.picasso.Picasso
+import br.com.githubchallenge.feature.main.service.model.Item
 import kotlinx.android.synthetic.main.item_repo.view.*
 
 class RepositoryViewHolder(itemView: View) : ViewHolder(itemView) {

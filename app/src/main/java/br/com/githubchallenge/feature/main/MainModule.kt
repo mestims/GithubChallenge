@@ -1,8 +1,8 @@
 package br.com.githubchallenge.feature.main
 
-import br.com.githubchallenge.paging.GithubDataSource
-import br.com.githubchallenge.paging.MainThreadExecutor
-import br.com.githubchallenge.service.GithubApi
+import br.com.githubchallenge.feature.main.paging.GithubDataSource
+import br.com.githubchallenge.feature.main.paging.MainThreadExecutor
+import br.com.githubchallenge.feature.main.service.GithubApi
 import org.koin.dsl.module
 import retrofit2.Retrofit
 

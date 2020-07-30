@@ -3,9 +3,8 @@ package br.com.githubchallenge.feature.main
 import androidx.paging.PagedList
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.githubchallenge.R
-import br.com.githubchallenge.service.model.Item
+import br.com.githubchallenge.feature.main.service.model.Item
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf

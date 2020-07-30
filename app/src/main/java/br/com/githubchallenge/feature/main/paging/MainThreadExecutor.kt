@@ -1,4 +1,4 @@
-package br.com.githubchallenge.paging
+package br.com.githubchallenge.feature.main.paging
 
 import android.os.Handler
 import android.os.Looper

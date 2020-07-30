@@ -1,9 +1,9 @@
 package br.com.githubchallenge.feature.main
 
 import androidx.paging.PagedList
-import br.com.githubchallenge.paging.GithubDataSource
-import br.com.githubchallenge.paging.MainThreadExecutor
-import br.com.githubchallenge.service.model.Item
+import br.com.githubchallenge.feature.main.paging.GithubDataSource
+import br.com.githubchallenge.feature.main.paging.MainThreadExecutor
+import br.com.githubchallenge.feature.main.service.model.Item
 
 class MainRepository constructor(
     private val dataSource: GithubDataSource,

@@ -1,9 +1,9 @@
-package br.com.githubchallenge.paging
+package br.com.githubchallenge.feature.main.paging
 
 import androidx.paging.PageKeyedDataSource
-import br.com.githubchallenge.service.GithubApi
-import br.com.githubchallenge.service.model.GitRepositories
-import br.com.githubchallenge.service.model.Item
+import br.com.githubchallenge.feature.main.service.GithubApi
+import br.com.githubchallenge.feature.main.service.model.GitRepositories
+import br.com.githubchallenge.feature.main.service.model.Item
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

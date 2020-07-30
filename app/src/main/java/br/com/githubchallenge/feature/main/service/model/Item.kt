@@ -1,4 +1,4 @@
-package br.com.githubchallenge.service.model
+package br.com.githubchallenge.feature.main.service.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Embedded

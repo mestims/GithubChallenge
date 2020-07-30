@@ -1,7 +1,7 @@
 package br.com.githubchallenge.feature.main
 
 import androidx.paging.PagedList
-import br.com.githubchallenge.service.model.Item
+import br.com.githubchallenge.feature.main.service.model.Item
 
 interface MainContract {
 

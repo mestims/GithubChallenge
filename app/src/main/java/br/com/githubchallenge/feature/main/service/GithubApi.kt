@@ -1,6 +1,6 @@
-package br.com.githubchallenge.service
+package br.com.githubchallenge.feature.main.service
 
-import br.com.githubchallenge.service.model.GitRepositories
+import br.com.githubchallenge.feature.main.service.model.GitRepositories
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
